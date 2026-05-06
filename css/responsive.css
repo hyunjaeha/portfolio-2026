@@ -1,0 +1,15 @@
+/* ===================================== Tablet ===================================== */
+@media screen and (max-width: 1023px) {
+  .container {
+    padding-left: var(--layout-padding-tablet);
+    padding-right: var(--layout-padding-tablet);
+  }
+}
+
+/* ===================================== Mobile ===================================== */
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: var(--layout-padding-mobile);
+    padding-right: var(--layout-padding-mobile);
+  }
+}

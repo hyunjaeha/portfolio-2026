@@ -1,0 +1,132 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
+
+:root {
+  /* ========================= Color ========================= */
+  --color-black: #1a1a1a;
+  --color-white: #ffffff;
+  --color-gray-100: #f5f5f5;
+  --color-gray-300: #cfcfcf;
+  --color-gray-500: #8a8a8a;
+
+  /* ========================= Spacing ========================= */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+
+  /* ========================= Font Size ========================= */
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+  --font-3xl: 32px;
+  --font-4xl: 40px;
+  --font-5xl: 50px;
+  --font-6xl: 72px;
+
+  /* ========================= Font Weight ========================= */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  /* ========================= Radius ========================= */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* ========================= Layout ========================= */
+  --container-max: 1280px;
+
+  --layout-padding-desktop: 40px;
+  --layout-padding-tablet: 24px;
+  --layout-padding-mobile: 16px;
+}
+
+/* ========================= Container ========================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--layout-padding-desktop);
+  padding-right: var(--layout-padding-desktop);
+}
+
+/* ========================= Typography ========================= */
+
+.heading-1 {
+  font-size: var(--font-5xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-2 {
+  font-size: var(--font-4xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.heading-3 {
+  font-size: var(--font-2xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.body-md {
+  font-size: var(--font-md);
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+.caption {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}

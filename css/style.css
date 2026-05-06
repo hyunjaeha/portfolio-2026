@@ -1,0 +1,192 @@
+.wrap {
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+/* ================================= header ================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.92);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 28px;
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+}
+
+.menu-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.menu-list a {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+}
+
+.menu-list a:hover {
+  color: #aaa;
+}
+
+.mb-menu-wrap {
+  display: none;
+}
+
+.main {
+  width: 100%;
+}
+
+/* ================================= hero ================================= */
+.hero-section {
+  width: 100%;
+  height: 720px;
+  padding-top: 72px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.hero-inner {
+  height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-name {
+  margin-top: 20px;
+  font-size: var(--font-2xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-white);
+}
+
+/* ================================= profile ================================= */
+.profile-section {
+  min-height: calc(100vh - 72px);
+  padding-top: 64px;
+  padding-bottom: 56px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-areas:
+    "intro info"
+    "contact info";
+  column-gap: 260px;
+  row-gap: 120px;
+}
+
+.profile-intro {
+  grid-area: intro;
+}
+
+.profile-info {
+  grid-area: info;
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;
+
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.profile-contact {
+  grid-area: contact;
+  align-self: end;
+  padding-bottom: 8px;
+  font-size: 13px;
+  color: var(--color-black);
+}
+
+.profile-grid h2 {
+  margin-bottom: 10px;
+}
+
+.profile-intro h3 {
+  margin-bottom: 18px;
+}
+
+.profile-intro p {
+  color: var(--color-gray-500);
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.info-item strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  color: #111;
+}
+
+.info-item span {
+  display: block;
+  font-size: 13px;
+  color: var(--color-gray-500);
+}
+
+.profile-contact p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-contact img {
+  width: 14px;
+  height: 14px;
+}
+
+.profile-contact p + p {
+  margin-top: 4px;
+}
+
+.license-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skill-group + .skill-group {
+  margin-top: 12px;
+}
+
+.skill-group h4 {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: var(--weight-black);
+  color: var(--color-black);
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-icons img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
