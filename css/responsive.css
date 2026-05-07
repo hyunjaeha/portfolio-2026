@@ -113,6 +113,7 @@
     min-width: 0;
   }
 
+
   .info-item strong {
     word-break: keep-all;
   }
@@ -138,6 +139,14 @@
   .web-content {
     grid-template-columns: 1fr;
     row-gap: 36px;
+  }
+
+   .branding-gallery {
+    gap: 24px;
+  }
+
+  .branding-copy {
+    font-size: 18px;
   }
 }
 
@@ -274,5 +283,29 @@
 
   .web-info h3 {
     font-size: 26px;
+  }
+
+  .branding-section {
+    padding: 72px 0 90px;
+  }
+
+  .branding-title {
+    margin-bottom: 56px;
+  }
+
+  .branding-gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .branding-img {
+    border-radius: 18px;
+  }
+
+  .branding-copy {
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.6;
   }
 }
