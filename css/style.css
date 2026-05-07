@@ -34,13 +34,25 @@
 }
 
 .menu-list a {
+  position: relative;
   color: var(--color-white);
   font-size: 15px;
   font-weight: var(--weight-medium);
 }
 
-.menu-list a:hover {
-  color: #aaa;
+.menu-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: width 0.3s ease;
+}
+
+.menu-list a:hover::after {
+  width: 100%;
 }
 
 .mb-menu-wrap {
@@ -84,11 +96,15 @@
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+
+  grid-template-columns: 360px 520px;
+
   grid-template-areas:
     "intro info"
     "contact info";
-  column-gap: 260px;
+
+  justify-content: space-between;
+
   row-gap: 120px;
 }
 
@@ -99,20 +115,31 @@
 .profile-info {
   grid-area: info;
   width: 100%;
-  max-width: 520px;
+  max-width: none;
   justify-self: end;
+  margin-left: auto;
+  padding-left: 160px;
 
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
 
+.profile-info .heading-2 {
+  font-size: 32px;
+}
+
+.highlight-symbol {
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: var(--weight-black);
+  line-height: 1;
+}
+
 .profile-contact {
   grid-area: contact;
   align-self: end;
   padding-bottom: 8px;
-  font-size: 13px;
-  color: var(--color-black);
 }
 
 .profile-grid h2 {
@@ -127,6 +154,10 @@
   color: var(--color-gray-500);
 }
 
+.profile-intro .body-md {
+  font-size: 18px;
+}
+
 .info-list {
   display: flex;
   flex-direction: column;
@@ -136,14 +167,13 @@
 .info-item strong {
   display: block;
   margin-bottom: 2px;
-  font-size: 13px;
-  font-weight: var(--weight-bold);
+  font-size: 18px;
+  font-weight: var(--weight-semibold);
   color: #111;
 }
 
 .info-item span {
   display: block;
-  font-size: 13px;
   color: var(--color-gray-500);
 }
 
@@ -154,8 +184,8 @@
 }
 
 .profile-contact img {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 .profile-contact p + p {
@@ -174,8 +204,8 @@
 
 .skill-group h4 {
   margin-bottom: 4px;
-  font-size: 13px;
-  font-weight: var(--weight-black);
+  font-size: var(--font-xl);
+  font-weight: var(--weight-bold);
   color: var(--color-black);
 }
 
@@ -189,4 +219,287 @@
   width: 36px;
   height: 36px;
   object-fit: contain;
+}
+
+/* ================================= app ================================= */
+.app-section {
+  width: 100%;
+  padding: 72px 0 120px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.app-title {
+  margin-bottom: 80px;
+}
+
+.app-title span {
+  color: #9b7cff;
+}
+
+/* project layout */
+.app-project {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  align-items: center;
+  column-gap: 120px;
+}
+
+.app-project + .app-project {
+  margin-top: 140px;
+}
+
+/* mockup common */
+.phone-mockup {
+  position: relative;
+  width: 360px;
+}
+
+.phone-frame {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* changing screen image */
+.moodget-screen,
+.jjup-screen {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.moodget-screen.active,
+.jjup-screen.active {
+  opacity: 1;
+}
+
+/* content */
+.app-content {
+  max-width: 560px;
+}
+
+.app-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app-info {
+  margin-bottom: 28px;
+}
+
+.app-label {
+  font-size: 15px;
+  font-weight: var(--weight-semibold);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.app-info h3 {
+  font-size: 40px;
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.app-type {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  white-space: nowrap;
+}
+
+/* tool */
+.app-tool {
+  margin-bottom: 48px;
+}
+
+.app-tool p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.app-tool-icons {
+  display: flex;
+  gap: 6px;
+}
+
+.app-tool-icons img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* buttons */
+.app-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.app-buttons a {
+  width: 110px;
+  height: 34px;
+  border: 1px solid var(--color-white);
+  border-radius: 999px;
+  color: var(--color-white);
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.app-buttons a:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* overview */
+.app-overview strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.app-overview p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+/* ================================= web ================================= */
+.web-section {
+  width: 100%;
+  padding: 100px 0 120px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.web-title {
+  margin-bottom: 80px;
+}
+
+.web-project {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  column-gap: 80px;
+}
+
+.web-project + .web-project {
+  margin-top: 120px;
+}
+
+.web-thumb img {
+  width: 100%;
+  display: block;
+}
+
+.web-content {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: end;
+  column-gap: 80px;
+}
+
+.web-label {
+  font-size: 15px;
+  font-weight: var(--weight-semibold);
+  margin-bottom: 4px;
+}
+
+.web-info h3 {
+  font-size: 28px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.web-type {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  margin-bottom: 28px;
+}
+
+.web-tool {
+  margin-bottom: 28px;
+}
+
+.web-tool p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.web-tool-icons {
+  display: flex;
+  gap: 6px;
+}
+
+.web-tool-icons img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.web-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.web-buttons a {
+  width: 110px;
+  height: 34px;
+
+  border: 1px solid var(--color-white);
+  border-radius: 999px;
+
+  color: var(--color-white);
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.web-buttons a:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.web-overview strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.web-overview p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-white);
+  word-break: keep-all;
 }

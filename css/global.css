@@ -116,6 +116,8 @@ body {
   line-height: 1.6;
   color: #1a1a1a;
   letter-spacing: -0.02em;
+  width: 100%;
+  overflow-x: hidden;
 }
 ul,
 li {

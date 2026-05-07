@@ -4,6 +4,141 @@
     padding-left: var(--layout-padding-tablet);
     padding-right: var(--layout-padding-tablet);
   }
+
+  .hero-section {
+    height: 720px;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .mb-menu-wrap {
+    position: relative;
+    display: block;
+  }
+
+  .mb-close-btn {
+    display: none;
+  }
+
+  .mb-menu-list {
+    position: fixed;
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+    padding: 32px 0;
+
+    background-color: var(--color-black);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    z-index: 99;
+  }
+
+  .mb-menu-list li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mb-menu-list a {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    padding: 12px 0;
+
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: var(--weight-bold);
+    text-align: center;
+  }
+
+  .mb-menu-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--color-white);
+    transition: width 0.3s ease;
+  }
+
+  .mb-menu-list a:hover::after {
+    width: 100%;
+  }
+
+  .mb-menu-wrap.active .mb-menu-list {
+    display: flex;
+  }
+
+  .mb-menu-wrap.active .mb-menu-btn {
+    display: none;
+  }
+
+  .mb-menu-wrap.active .mb-close-btn {
+    display: block;
+  }
+
+  /* profile */
+
+  .profile-grid {
+    grid-template-columns: 420px 1fr;
+    grid-template-areas:
+      "intro info"
+      "contact info";
+    column-gap: 80px;
+    row-gap: 120px;
+  }
+
+  .profile-info {
+    width: 100%;
+    max-width: none;
+    justify-self: end;
+    padding-left: 0;
+    min-width: 0;
+  }
+
+  .info-item strong {
+    word-break: keep-all;
+  }
+
+  /* App */
+  .app-project,
+  .app-project-2 {
+    grid-template-columns: 300px 1fr;
+    column-gap: 60px;
+  }
+
+  .app-content {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  /* Web */
+  .web-project {
+    grid-template-columns: 240px 1fr;
+    column-gap: 56px;
+  }
+
+  .web-content {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
 }
 
 /* ===================================== Mobile ===================================== */
@@ -11,5 +146,133 @@
   .container {
     padding-left: var(--layout-padding-mobile);
     padding-right: var(--layout-padding-mobile);
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .hero-section {
+    height: 720px;
+    min-height: auto;
+    padding-top: 64px;
+  }
+
+  .hero-inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .heading-1 {
+    font-size: 40px;
+  }
+
+  .heading-2 {
+    font-size: 34px;
+  }
+
+  .heading-3 {
+    font-size: 22px;
+  }
+
+  .mb-menu-list {
+    top: 64px;
+  }
+
+  .mb-menu-wrap {
+    display: block;
+  }
+
+  /* Profile */
+  .profile-section {
+    padding-top: 56px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "contact"
+      "info";
+    row-gap: 60px;
+  }
+
+  .profile-contact {
+    align-self: start;
+    padding-bottom: 0;
+  }
+
+  .profile-info {
+    max-width: none;
+    justify-self: stretch;
+    padding-left: 0;
+  }
+
+  /* App */
+  .app-section {
+    padding: 56px 0 80px;
+  }
+
+  .app-title {
+    margin-bottom: 56px;
+  }
+
+  .app-project,
+  .app-project-2 {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+
+  .app-project-2 .app-content {
+    order: 2;
+  }
+
+  .app-project-2 .app-mockup {
+    order: 1;
+  }
+
+  .app-mockup {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .app-content {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .app-meta h3 {
+    font-size: 34px;
+  }
+
+  /* Web */
+  .web-section {
+    padding: 72px 0 90px;
+  }
+
+  .web-title {
+    margin-bottom: 56px;
+  }
+
+  .web-project {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .web-project + .web-project {
+    margin-top: 90px;
+  }
+
+  .web-thumb {
+    max-width: 280px;
+  }
+
+  .web-content {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .web-info h3 {
+    font-size: 26px;
   }
 }
