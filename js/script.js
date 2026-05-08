@@ -1,10 +1,19 @@
+// 새로고침 시 항상 맨 위에서 시작
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
 // mobile menu
 const mbMenuBtn = document.querySelector(".mb-menu-btn");
 const mbCloseBtn = document.querySelector(".mb-close-btn");
 const mbMenulist = document.querySelector(".mb-menu-list");
-// console.log(mbMenuBtn, mbCloseBtn, mbMenulist);
+
 mbMenuBtn.addEventListener("click", (e) => {
-  e.preventDefault(); // 기본 동작 방지
+  e.preventDefault();
   console.log("모바일 메뉴 버튼 클릭");
 
   mbMenuBtn.style.display = "none";
@@ -21,7 +30,51 @@ mbCloseBtn.addEventListener("click", (e) => {
   mbMenulist.style.display = "none";
 });
 
-// 무드겟 이미지 슬라이드
+// custom cursor
+const customCursor = document.querySelector(".custom-cursor");
+
+if (customCursor) {
+  document.addEventListener("mousemove", (e) => {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+  });
+
+  const navCursorTargets = document.querySelectorAll(
+    ".logo a, .menu-list a, .mb-menu-list a",
+  );
+
+  navCursorTargets.forEach((target) => {
+    target.addEventListener("mouseenter", () => {
+      customCursor.classList.add("active");
+    });
+
+    target.addEventListener("mouseleave", () => {
+      customCursor.classList.remove("active");
+    });
+  });
+}
+
+// scroll reveal title
+const revealTitles = document.querySelectorAll(".reveal-title");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  {
+    threshold: 0.35,
+  },
+);
+
+revealTitles.forEach((title) => {
+  revealObserver.observe(title);
+});
+
+// moodget 이미지 슬라이드
 const moodgetImages = [
   "assets/images/moodget_splash.png",
   "assets/images/moodget_onboarding.png",
@@ -87,3 +140,23 @@ if (jjupScreens.length === 2) {
     activeJjup = 1 - activeJjup;
   }, 3000);
 }
+
+// design tab
+const designTabButtons = document.querySelectorAll(".design-tab-btn");
+const designPanels = document.querySelectorAll(".design-panel");
+
+designTabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.target;
+
+    designTabButtons.forEach((btn) => btn.classList.remove("active"));
+    designPanels.forEach((panel) => panel.classList.remove("active"));
+
+    button.classList.add("active");
+
+    const targetPanel = document.getElementById(target);
+    if (targetPanel) {
+      targetPanel.classList.add("active");
+    }
+  });
+});

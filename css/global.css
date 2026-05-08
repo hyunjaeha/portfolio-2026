@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Rubik+Scribble&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
 
 :root {
   /* ========================= Color ========================= */
@@ -131,4 +133,54 @@ a {
 img {
   border: 0;
   vertical-align: middle;
+}
+
+/* 커서 색반전 */
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  background-color: #fff;
+  mix-blend-mode: difference;
+
+  pointer-events: none;
+  z-index: 9999;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.custom-cursor.active {
+  width: 44px;
+  height: 44px;
+  opacity: 1;
+}
+
+/* 네비게이션 위에서 기본 마우스 숨기기 */
+.logo a,
+.menu-list a,
+.mb-menu-list a {
+  cursor: none;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.wrap {
+  width: 100%;
+  overflow-x: hidden;
 }

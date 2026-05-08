@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포트폴리오 사이트 실습</title>
 
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
@@ -12,6 +14,7 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <div class="custom-cursor"></div>
     <div class="wrap">
       <!--=========================== header ===========================-->
       <header class="header">
@@ -27,6 +30,7 @@
               <li><a href="#web">Web</a></li>
               <li><a href="#branding">Branding</a></li>
               <li><a href="#design">Design</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
 
             <div class="mb-menu-wrap">
@@ -43,6 +47,7 @@
                 <li><a href="#web">Web</a></li>
                 <li><a href="#branding">Branding</a></li>
                 <li><a href="#design">Design</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
           </nav>
@@ -53,17 +58,22 @@
         <!--=========================== hero section ===========================-->
         <section id="home" class="hero-section">
           <div class="hero-inner container">
-            <h2 class="heading-1">
-              UX/UI Designer<br />
-              Portfolio
-            </h2>
-            <p class="hero-name body-md">Ha HyunJae</p>
+            <div class="hero-center">
+              <div class="hero-symbol-wrap">
+                <span class="hero-symbol hero-question">?</span>
+                <span class="hero-to">TO</span>
+                <span class="hero-symbol hero-exclamation">!</span>
+              </div>
+
+              <p class="hero-title">UX/UI DESIGNER</p>
+              <p class="hero-copy">PORTFOLIO 2026</p>
+              <p class="hero-name-main">HA HYUNJAE</p>
+            </div>
           </div>
         </section>
 
         <!--=========================== profile section ===========================-->
         <section id="profile" class="profile-section">
-
           <div class="profile-grid container">
             <div class="profile-intro">
               <h2 class="heading-2">Profile</h2>
@@ -77,9 +87,9 @@
               </h3>
 
               <p class="body-md">
-                디자인은 물음표에서 시작됩니다.<br />
-                사용자가 무엇을 불편해하는지 먼저 발견하고,<br />
-                그 답을 화면 위에 풀어냅니다.
+                저에게 물음표는 멈춤이 아닌 시작입니다.<br />
+                낯선 것 앞에서 질문하고 직접 부딪히며,<br />
+                사용자에게 필요한 답을 화면 위에 풀어냅니다.
               </p>
             </div>
 
@@ -199,14 +209,14 @@
         </section>
 
         <!--=========================== app section ===========================-->
-          <section id="app" class="app-section section-file">
-  <div class="section-file-tab tab-app">
-    <img src="assets/images/app.png" alt="" />
-    <span>App</span>
-  </div>
+        <section id="app" class="app-section section-file">
+          <div class="section-file-tab tab-app">
+            <img src="assets/images/app.png" alt="" />
+            <span>App</span>
+          </div>
 
           <div class="app-inner container">
-            <h2 class="heading-1 app-title">
+            <h2 class="heading-1 app-title reveal-title">
               App Design <span>&amp;&amp;</span> Coding
             </h2>
 
@@ -357,95 +367,110 @@
         </section>
 
         <!--=========================== web section ===========================-->
-          <section id="web" class="web-section section-file">
-  <div class="section-file-tab tab-web">
-    <img src="assets/images/web.png" alt="" />
-     <span>Web</span>
-  </div>
+        <section id="web" class="web-section section-file">
+          <div class="section-file-tab tab-web">
+            <img src="assets/images/web.png" alt="" />
+            <span>Web</span>
+          </div>
 
           <div class="web-inner container">
-            <h2 class="heading-1 web-title">Web Design</h2>
+            <h2 class="heading-1 web-title reveal-title">
+              Web Design <span>&amp;&amp;</span> Coding
+            </h2>
 
-            <!-- rom&nd -->
-            <div class="web-project">
-              <div class="web-thumb">
-                <img src="assets/images/romnd.png" alt="롬앤 웹 디자인" />
-              </div>
-
-              <div class="web-content">
-                <div class="web-info">
-                  <p class="web-label">롬앤</p>
-                  <h3>rom&nd</h3>
-                  <p class="web-type">팀 프로젝트 | 리디자인</p>
-
-                  <div class="web-tool">
-                    <p>Tool</p>
-                    <div class="web-tool-icons">
-                      <img src="assets/images/figma_white.png" alt="Figma" />
-                      <img src="assets/images/ps_white.png" alt="Photoshop" />
-                      <img src="assets/images/ai_white.png" alt="Illustrator" />
-                      <img
-                        src="assets/images/ae_white.png"
-                        alt="After Effects"
-                      />
-                    </div>
+            <div class="web-grid">
+              <!-- rom&nd -->
+              <article class="web-card">
+                <div class="web-card-top">
+                  <div class="web-thumb">
+                    <img src="assets/images/romnd.png" alt="롬앤 웹 디자인" />
                   </div>
 
-                  <div class="web-buttons">
-                    <a
-                      href="https://www.figma.com/proto/0ti235hgcSIbq8XbOPEDG0/%EB%A1%AC%EC%95%A4-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?node-id=1-333&viewport=-396%2C286%2C0.07&t=ehwlRwcGBPZvXjAM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
-                      target="_blank"
-                      >View Project</a
-                    >
-                    <a
-                      href="https://www.figma.com/proto/oqN2JfFm4iebAalA4f47XT/%ED%95%98%ED%98%84%EC%9E%AC_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?page-id=0%3A1&node-id=297-484&viewport=-3004%2C914%2C0.26&t=fiJFntyoig2eqNdt-1&scaling=min-zoom&content-scaling=fixed"
-                      target="_blank"
-                      >Process</a
-                    >
+                  <div class="web-meta">
+                    <div class="web-info">
+                      <h3>rom&nd</h3>
+                      <p class="web-type">[롬앤 리디자인]</p>
+                      <p class="web-role">팀 프로젝트 (2인)</p>
+                    </div>
+
+                    <div class="web-tool">
+                      <p>Tool</p>
+                      <div class="web-tool-icons">
+                        <img src="assets/images/ps_white.png" alt="Photoshop" />
+                        <img
+                          src="assets/images/ai_white.png"
+                          alt="Illustrator"
+                        />
+                        <img
+                          src="assets/images/ae_white.png"
+                          alt="After Effects"
+                        />
+                        <img src="assets/images/figma_white.png" alt="Figma" />
+                      </div>
+                    </div>
+
+                    <div class="web-buttons">
+                      <a
+                        href="https://www.figma.com/proto/0ti235hgcSIbq8XbOPEDG0/%EB%A1%AC%EC%95%A4-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?node-id=1-333&viewport=-396%2C286%2C0.07&t=ehwlRwcGBPZvXjAM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                        target="_blank"
+                      >
+                        View Project
+                      </a>
+                      <a
+                        href="https://www.figma.com/proto/oqN2JfFm4iebAalA4f47XT/%ED%95%98%ED%98%84%EC%9E%AC_%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?page-id=0%3A1&node-id=297-484&viewport=-3004%2C914%2C0.26&t=fiJFntyoig2eqNdt-1&scaling=min-zoom&content-scaling=fixed"
+                        target="_blank"
+                      >
+                        Process
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div class="web-overview">
                   <strong>Overview</strong>
                   <p>
-                    기존 롬앤 웹사이트의 브랜드 소개 페이지가 부족하다는 점에
-                    주목해, 브랜드 아이덴티티를 중심으로 한 웹 페이지를
-                    제작했습니다. 20대 여성 고객층을 고려해 감각적이고 키치한
-                    무드를 반영했으며, 브랜드 스토리와 컬렉션 콘텐츠를 함께
-                    구성해 롬앤의 분위기와 가치를 자연스럽게 경험할 수 있도록
-                    설계했습니다.
+                    기존 롬앤 웹사이트에서 부족했던 브랜드 소개 영역에 주목해,
+                    브랜드 아이덴티티를 중심으로 리디자인한 웹페이지입니다. 20대
+                    여성 고객층을 고려해 감각적이고 키치한 무드를 반영하고,
+                    브랜드 스토리와 컬렉션 콘텐츠를 함께 구성했습니다.
                   </p>
                 </div>
-              </div>
-            </div>
+              </article>
 
-            <!-- Kodak -->
-            <div class="web-project">
-              <div class="web-thumb">
-                <img src="assets/images/kodak.png" alt="코닥 웹 디자인" />
-              </div>
-
-              <div class="web-content">
-                <div class="web-info">
-                  <p class="web-label">코닥</p>
-                  <h3>Kodak</h3>
-                  <p class="web-type">개인 프로젝트 | 랜딩페이지</p>
-
-                  <div class="web-tool">
-                    <p>Tool</p>
-                    <div class="web-tool-icons">
-                      <img src="assets/images/figma_white.png" alt="Figma" />
-                      <img src="assets/images/ps_white.png" alt="Photoshop" />
-                      <img src="assets/images/ai_white.png" alt="Illustrator" />
-                    </div>
+              <!-- Kodak -->
+              <article class="web-card">
+                <div class="web-card-top">
+                  <div class="web-thumb">
+                    <img src="assets/images/kodak.png" alt="코닥 웹 디자인" />
                   </div>
 
-                  <div class="web-buttons">
-                    <a
-                      href="https://www.figma.com/proto/7U4a59r3r5rejQDOaiAR6a/%ED%95%98%ED%98%84%EC%9E%AC_%EB%9E%9C%EB%94%A9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=4-24&viewport=-26%2C175%2C0.33&t=qImNz5fhuhJX98BD-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
-                      target="_blank"
-                      >View Project</a
-                    >
+                  <div class="web-meta">
+                    <div class="web-info">
+                      <h3>KODAK</h3>
+                      <p class="web-type">[랜딩페이지 제작]</p>
+                      <p class="web-role">개인 프로젝트</p>
+                    </div>
+
+                    <div class="web-tool">
+                      <p>Tool</p>
+                      <div class="web-tool-icons">
+                        <img src="assets/images/ps_white.png" alt="Photoshop" />
+                        <img
+                          src="assets/images/ai_white.png"
+                          alt="Illustrator"
+                        />
+                        <img src="assets/images/figma_white.png" alt="Figma" />
+                      </div>
+                    </div>
+
+                    <div class="web-buttons">
+                      <a
+                        href="https://www.figma.com/proto/7U4a59r3r5rejQDOaiAR6a/%ED%95%98%ED%98%84%EC%9E%AC_%EB%9E%9C%EB%94%A9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=4-24&viewport=-26%2C175%2C0.33&t=qImNz5fhuhJX98BD-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                        target="_blank"
+                      >
+                        View Project
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -454,47 +479,254 @@
                   <p>
                     Kodak 필름 카메라의 레트로 감성과 기록의 즐거움을 바탕으로,
                     신제품 ‘CHARMERA’를 소개하는 랜딩페이지를 제작했습니다.
-                    콜라주 스타일, 스티커, 필름 그래픽 요소와 Kodak의 대표
-                    컬러를 활용해 브랜드 무드를 시각적으로 표현했습니다. 제품
-                    소개부터 프레임·필터, 인기 상품 영역까지 자연스럽게
-                    이어지도록 구성해 브랜드 경험과 탐색 흐름을 강화했습니다.
+                    콜라주 스타일, 스티커, 필름 프레임 요소와 Kodak의 옐로우
+                    컬러를 활용해 아날로그 무드를 시각적으로 표현했습니다.
                   </p>
+                </div>
+              </article>
+
+              <!-- AERON -->
+              <article class="web-card">
+                <div class="web-card-top">
+                  <div class="web-thumb">
+                    <img
+                      src="assets/images/aeron.png"
+                      alt="에어론 쇼핑몰 웹사이트"
+                    />
+                  </div>
+
+                  <div class="web-meta">
+                    <div class="web-info">
+                      <h3>AERON</h3>
+                      <p class="web-type">[Cafe24 쇼핑몰 제작]</p>
+                      <p class="web-role">개인 프로젝트</p>
+                    </div>
+
+                    <div class="web-tool">
+                      <p>Tool</p>
+                      <div class="web-tool-icons">
+                        <img src="assets/images/ps_white.png" alt="Photoshop" />
+                        <img
+                          src="assets/images/ai_white.png"
+                          alt="Illustrator"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="web-buttons">
+                      <a href="https://gkguswo1231.cafe24.com/" target="_blank">
+                        View Project
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="web-overview">
+                  <strong>Overview</strong>
+                  <p>
+                    러닝화 및 스포츠 용품 브랜드 ‘AERON’을 콘셉트로 제작한
+                    Cafe24 기반 쇼핑몰 사이트입니다. 메인 비주얼, 상품 리스트,
+                    프로모션 영역을 구성해 브랜드의 역동적인 분위기와 쇼핑
+                    흐름을 직관적으로 전달했습니다.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <!--=========================== branding section ===========================-->
+        <section id="branding" class="branding-section section-file">
+          <div class="section-file-tab tab-branding">
+            <img src="assets/images/branding.png" alt="" />
+            <span>Branding</span>
+          </div>
+
+          <div class="branding-inner container">
+            <h2 class="heading-1 branding-title reveal-title">Branding</h2>
+
+            <div class="branding-gallery">
+              <div class="branding-img branding-img-left">
+                <img
+                  src="assets/images/uglyfruit_bag.png"
+                  alt="Ugly Fruit 쇼핑백 디자인"
+                />
+              </div>
+
+              <div class="branding-img branding-img-center">
+                <img
+                  src="assets/images/uglyfruit.png"
+                  alt="Ugly Fruit 로고 디자인"
+                />
+              </div>
+
+              <div class="branding-img branding-img-right">
+                <img
+                  src="assets/images/uglyfruit_card.png"
+                  alt="Ugly Fruit 명함 디자인"
+                />
+              </div>
+            </div>
+
+            <p class="branding-copy">
+              완벽하지 않아도, 충분한 가치를 담다 <strong>“UGLY FRUIT”</strong>
+            </p>
+          </div>
+        </section>
+
+        <!--=========================== design section ===========================-->
+        <section id="design" class="design-section section-file">
+          <div class="section-file-tab tab-design">
+            <img src="assets/images/design.png" alt="" />
+            <span>Design</span>
+          </div>
+
+          <div class="design-inner container">
+            <h2 class="heading-1 design-title reveal-title">Design</h2>
+
+            <div class="design-heading"></div>
+
+            <div class="design-wrap">
+              <ul class="design-menu">
+                <li>
+                  <button
+                    type="button"
+                    class="design-tab-btn active"
+                    data-target="card-news"
+                  >
+                    <img
+                      src="assets/icons/right.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <span>Card News</span>
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    type="button"
+                    class="design-tab-btn"
+                    data-target="poster"
+                  >
+                    <img
+                      src="assets/icons/right.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <span>Poster</span>
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    type="button"
+                    class="design-tab-btn"
+                    data-target="detail-page"
+                  >
+                    <img
+                      src="assets/icons/right.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <span>Detail Page</span>
+                  </button>
+                </li>
+              </ul>
+
+              <div class="design-content">
+                <!-- Card News -->
+                <div class="design-panel active" id="card-news">
+                  <div class="design-grid">
+                    <div class="design-card">
+                      <img
+                        src="assets/images/eclipse.png"
+                        alt="Eclipse 카드뉴스"
+                      />
+                    </div>
+
+                    <div class="design-card">
+                      <img
+                        src="assets/images/gentlemonster.png"
+                        alt="Gentle Monster 카드뉴스"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Poster -->
+                <div class="design-panel" id="poster">
+                  <div class="design-grid">
+                    <div class="design-card no-radius-card">
+                      <img
+                        src="assets/images/baskin.png"
+                        alt="Baskin Robbins 포스터 디자인"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Detail Page -->
+                <div class="design-panel" id="detail-page">
+                  <div class="design-grid">
+                    <div class="design-card no-radius-card">
+                      <img
+                        src="assets/images/arencia.png"
+                        alt="Arencia 상세페이지 디자인"
+                      />
+                    </div>
+
+                    <div class="design-card no-radius-card">
+                      <img
+                        src="assets/images/colgate.png"
+                        alt="Colgate 상세페이지 디자인"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!--=========================== branding section ===========================-->
-<section id="branding" class="branding-section section-file">
-  <div class="section-file-tab tab-branding">
-    <img src="assets/images/branding.png" alt="" />
-    <span>Branding</span>
-  </div>
+        <!--=========================== contact section ===========================-->
+        <section id="contact" class="contact-section section-file">
+          <div class="section-file-tab tab-contact">
+            <img src="assets/images/contact.png" alt="" />
+            <span>Contact</span>
+          </div>
 
-  <div class="branding-inner container">
-    <h2 class="heading-1 branding-title">Branding</h2>
+          <div class="contact-inner container">
+            <div class="contact-top">
+              <p class="contact-small">CONTACT ME</p>
+              <p class="contact-work">
+                WANT TO WORK<br />
+                TOGETHER?
+              </p>
+            </div>
 
-    <div class="branding-gallery">
-      <div class="branding-img branding-img-left">
-        <img src="assets/images/uglyfruit_bag.png" alt="Ugly Fruit 쇼핑백 디자인" />
-      </div>
+            <div class="contact-main">
+              <h2 class="contact-title">Get in touch</h2>
+              <a href="mailto:hhyunjae.ha@gmail.com" class="contact-email">
+                hhyunjae.ha@gmail.com
+              </a>
+            </div>
 
-      <div class="branding-img branding-img-center">
-        <img src="assets/images/uglyfruit.png" alt="Ugly Fruit 로고 디자인" />
-      </div>
+            <div class="contact-bottom">
+              <p class="contact-info">
+                346 Dongdaegu-ro, Daegu<br />
+                Phone Number:<br />
+                +82 10 3943 7367
+              </p>
 
-      <div class="branding-img branding-img-right">
-        <img src="assets/images/uglyfruit_card.png" alt="Ugly Fruit 명함 디자인" />
-      </div>
-    </div>
+              <p class="contact-year">
+                Portfolio<br />
+                2026
+              </p>
 
-    <p class="branding-copy">
-      완벽하지 않아도, 충분한 가치를 담다 <strong>“UGLY FRUIT”</strong>
-    </p>
-  </div>
-</section>
-
+              <a href="#home" class="home-btn">HOME</a>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </body>

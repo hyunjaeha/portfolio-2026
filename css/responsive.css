@@ -94,6 +94,29 @@
     display: block;
   }
 
+  /* hero */
+
+  .hero-symbol-wrap {
+    font-size: 108px;
+  }
+
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .hero-copy {
+    font-size: 30px;
+  }
+
+  .hero-name-main {
+    font-size: 20px;
+  }
+
+  .hero-center::before {
+    width: 440px;
+    height: 440px;
+  }
+
   /* profile */
 
   .profile-grid {
@@ -113,7 +136,6 @@
     min-width: 0;
   }
 
-
   .info-item strong {
     word-break: keep-all;
   }
@@ -131,22 +153,79 @@
   }
 
   /* Web */
-  .web-project {
-    grid-template-columns: 240px 1fr;
-    column-gap: 56px;
-  }
-
-  .web-content {
+  .web-grid {
     grid-template-columns: 1fr;
-    row-gap: 36px;
+    gap: 120px;
   }
 
-   .branding-gallery {
+  .web-card-top {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .web-info h3 {
+    font-size: 32px;
+  }
+
+  .web-type {
+    font-size: 18px;
+  }
+
+  .web-role,
+  .web-overview p {
+    font-size: 16px;
+  }
+
+  .tab-web {
+    left: 16.6%;
+    transform: translateY(calc(-100% + 4px));
+  }
+
+  /* Branding */
+  .branding-gallery {
     gap: 24px;
   }
 
   .branding-copy {
     font-size: 18px;
+  }
+
+  /* Design */
+  .design-section {
+    padding: 88px 0 110px;
+  }
+
+  .design-wrap {
+    grid-template-columns: 180px 1fr;
+    column-gap: 48px;
+  }
+
+  .design-tab-btn {
+    font-size: 20px;
+  }
+
+  .design-grid {
+    gap: 24px;
+  }
+
+  .design-card {
+    width: 150px;
+  }
+
+  .design-subcopy {
+    font-size: 18px;
+  }
+
+  /* Contact */
+  .contact-title {
+    font-size: 56px;
+  }
+
+  .contact-email {
+    font-size: 44px;
+  }
+
+  .contact-bottom {
+    grid-template-columns: 1fr 1fr 140px;
   }
 }
 
@@ -192,9 +271,50 @@
     display: block;
   }
 
+  /* hero */
+  .hero-kicker {
+    left: 16px;
+    top: 24px;
+    font-size: 12px;
+  }
+
+  .hero-symbol-wrap {
+    gap: 18px;
+    font-size: 76px;
+  }
+
+  .hero-to {
+    font-size: 26px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-copy {
+    font-size: 18px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-name-main {
+    margin-top: 28px;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-center::before {
+    width: 320px;
+    height: 320px;
+  }
+
+  .scroll-hint {
+    bottom: 24px;
+  }
+
   /* Profile */
   .profile-section {
-    padding-top: 56px;
+    padding-top: var(--spacing-48);
   }
 
   .profile-grid {
@@ -228,63 +348,163 @@
 
   .app-project,
   .app-project-2 {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     row-gap: 36px;
   }
 
-  .app-project-2 .app-content {
-    order: 2;
+  .app-content {
+    display: contents;
   }
 
-  .app-project-2 .app-mockup {
+  .app-meta {
     order: 1;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info buttons"
+      "tool buttons";
+    column-gap: 24px;
+    row-gap: 20px;
+    align-items: start;
+  }
+
+  .app-info {
+    grid-area: info;
+    margin-bottom: 0;
+  }
+
+  .app-tool {
+    grid-area: tool;
+    margin-bottom: 0;
+  }
+
+  .app-buttons {
+    grid-area: buttons;
+    align-self: center;
+
+    margin-bottom: 0;
   }
 
   .app-mockup {
-    max-width: 260px;
-    margin: 0 auto;
+    order: 2;
+    width: 100%;
+    max-width: 230px;
+    margin: 4px auto 0;
   }
 
-  .app-content {
-    grid-template-columns: 1fr;
-    row-gap: 28px;
+  .app-overview {
+    order: 3;
+    width: 100%;
+    margin-top: 0;
   }
 
-  .app-meta h3 {
+  .app-meta h3,
+  .app-info h3 {
     font-size: 34px;
+  }
+
+  .app-label {
+    font-size: 14px;
+  }
+
+  .app-type {
+    font-size: 14px;
+  }
+
+  .app-overview strong {
+    font-size: 15px;
+  }
+
+  .app-overview p {
+    font-size: 16px;
+    line-height: 1.75;
   }
 
   /* Web */
   .web-section {
+    width: 100%;
     padding: 72px 0 90px;
+    overflow: visible;
   }
 
   .web-title {
     margin-bottom: 56px;
   }
 
-  .web-project {
+  .web-grid {
+    width: 100%;
+    display: grid;
     grid-template-columns: 1fr;
-    row-gap: 32px;
+    gap: 72px;
   }
 
-  .web-project + .web-project {
-    margin-top: 90px;
+  .web-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .web-card-top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
   }
 
   .web-thumb {
-    max-width: 280px;
+    width: 100%;
+    max-width: 260px;
   }
 
-  .web-content {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
+  .web-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .web-meta {
+    width: 100%;
+    min-width: 0;
   }
 
   .web-info h3 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
+  .web-type {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .web-role {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .web-tool {
+    margin-bottom: 28px;
+  }
+
+  .web-overview {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .web-overview strong {
+    font-size: 18px;
+  }
+
+  .web-overview p {
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Branding */
   .branding-section {
     padding: 72px 0 90px;
   }
@@ -307,5 +527,92 @@
     font-size: 16px;
     text-align: left;
     line-height: 1.6;
+  }
+
+  /* Design */
+  .design-section {
+    padding: 72px 0 90px;
+  }
+
+  .design-heading {
+    margin-bottom: 40px;
+  }
+
+  .design-wrap {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .design-menu {
+    gap: 14px;
+  }
+
+  .design-tab-btn {
+    font-size: 18px;
+  }
+
+  .design-grid {
+    gap: 16px;
+  }
+
+  .design-card {
+    width: 140px;
+  }
+
+  .design-subcopy {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 72px 0 90px;
+  }
+
+  .contact-inner {
+    min-height: 500px;
+  }
+
+  .contact-top {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .contact-title {
+    font-size: 42px;
+  }
+
+  .contact-email {
+    font-size: 30px;
+    word-break: break-all;
+  }
+
+  .contact-bottom {
+    margin-top: 72px;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .home-btn {
+    justify-self: start;
+  }
+
+  .section-file-tab img {
+    width: 140px;
+  }
+
+  .tab-contact {
+    left: auto;
+    right: -4px;
+    transform: translateY(calc(-100% + 4px));
+  }
+
+  /* 커서 */
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
   }
 }
