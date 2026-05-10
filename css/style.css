@@ -217,20 +217,34 @@
 
 .profile-grid {
   display: grid;
-
   grid-template-columns: 360px 520px;
-
-  grid-template-areas:
-    "intro info"
-    "contact info";
-
+  grid-template-areas: "left info";
   justify-content: space-between;
+  align-items: start;
+}
 
-  row-gap: 120px;
+.profile-left {
+  grid-area: left;
+
+  position: sticky;
+  top: 120px;
+  align-self: start;
+
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
 }
 
 .profile-intro {
-  grid-area: intro;
+  grid-area: auto;
+  position: static;
+  top: 120px;
+  align-self: start;
+}
+
+.profile-sticky {
+  position: sticky;
+  top: 120px;
 }
 
 .profile-info {
@@ -258,8 +272,8 @@
 }
 
 .profile-contact {
-  grid-area: contact;
-  align-self: end;
+   grid-area: auto;
+  align-self: start;
   padding-bottom: 8px;
 }
 
