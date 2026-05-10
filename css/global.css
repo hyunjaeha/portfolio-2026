@@ -135,7 +135,7 @@ img {
   vertical-align: middle;
 }
 
-/* 커서 색반전 */
+/* 커서 색 반전 */
 .custom-cursor {
   position: fixed;
   left: 0;
@@ -177,10 +177,10 @@ img {
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .wrap {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
