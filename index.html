@@ -74,38 +74,38 @@
 
         <!--=========================== profile section ===========================-->
         <section id="profile" class="profile-section">
-         <div class="profile-grid container">
-  <div class="profile-left">
-    <div class="profile-intro">
-      <h2 class="heading-2">Profile</h2>
-      <h3 class="heading-3">
-        안녕하세요,
-        <span class="highlight-symbol">?</span>
-        에서 시작해<br />
+          <div class="profile-grid container">
+            <div class="profile-left">
+              <div class="profile-intro">
+                <h2 class="heading-2">Profile</h2>
+                <h3 class="heading-3">
+                  안녕하세요,
+                  <span class="highlight-symbol">?</span>
+                  에서 시작해<br />
 
-        <span class="highlight-symbol">!</span>
-        를 찾아내는 디자이너 하현재입니다.
-      </h3>
+                  <span class="highlight-symbol">!</span>
+                  를 찾아내는 디자이너 하현재입니다.
+                </h3>
 
-      <p class="body-md">
-        저에게 물음표는 멈춤이 아닌 시작입니다.<br />
-        낯선 것 앞에서 질문하고 직접 부딪히며,<br />
-        사용자에게 필요한 답을 화면 위에 풀어냅니다.
-      </p>
-    </div>
+                <p class="body-md">
+                  저에게 물음표는 멈춤이 아닌 시작입니다.<br />
+                  낯선 것 앞에서 질문하고 직접 부딪히며,<br />
+                  사용자에게 필요한 답을 화면 위에 풀어냅니다.
+                </p>
+              </div>
 
-    <div class="profile-contact">
-      <p>
-        <img src="assets/icons/mail.svg" alt="메일" />
-        hhyunjae.ha@gmail.com
-      </p>
+              <div class="profile-contact">
+                <p>
+                  <img src="assets/icons/mail.svg" alt="메일" />
+                  hhyunjae.ha@gmail.com
+                </p>
 
-      <p>
-        <img src="assets/icons/phone.svg" alt="전화" />
-        010-3943-7367
-      </p>
-    </div>
-  </div>
+                <p>
+                  <img src="assets/icons/phone.svg" alt="전화" />
+                  010-3943-7367
+                </p>
+              </div>
+            </div>
 
             <div class="profile-info">
               <div class="profile-edu">
@@ -652,9 +652,12 @@
                         alt="Gentle Monster 카드뉴스"
                       />
                     </div>
+
+                    <div class="design-card">
+                      <img src="assets/images/tint.png" alt="Tint 카드뉴스" />
+                    </div>
                   </div>
                 </div>
-
                 <!-- Poster -->
                 <div class="design-panel" id="poster">
                   <div class="design-grid">
@@ -671,17 +674,31 @@
                 <div class="design-panel" id="detail-page">
                   <div class="design-grid">
                     <div class="design-card no-radius-card">
-                      <img
-                        src="assets/images/arencia.png"
-                        alt="Arencia 상세페이지 디자인"
-                      />
+                      <button
+                        type="button"
+                        class="detail-popup-btn"
+                        onclick="
+                          openImageModal('assets/images/arencia_detail.jpg')
+                        "
+                      >
+                        <img
+                          src="assets/images/arencia.png"
+                          alt="Arencia 상세페이지 디자인"
+                        />
+                      </button>
                     </div>
 
                     <div class="design-card no-radius-card">
-                      <img
-                        src="assets/images/colgate.png"
-                        alt="Colgate 상세페이지 디자인"
-                      />
+                      <a
+                        href="https://gkguswo1231.cafe24.com/product/%EA%B3%A0%EB%B6%88%EC%86%8C-%EC%BD%9C%EA%B2%8C%EC%9D%B4%ED%8A%B8-%ED%94%84%EB%A1%9C%ED%85%8D%EC%85%98-%EC%B9%98%EC%95%BD-%EA%B8%B0%ED%9A%8D-2%EC%A2%85-%ED%83%9D1-%EB%A0%88%EA%B7%A4%EB%9F%AC%EC%BF%A8%EB%AF%BC%ED%8A%B8/10/category/47/display/1/"
+                        target="_blank"
+                        class="detail-popup-btn"
+                      >
+                        <img
+                          src="assets/images/colgate.png"
+                          alt="Colgate 상세페이지 디자인"
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -730,6 +747,20 @@
           </div>
         </section>
       </main>
+
+      <div class="image-modal" id="imageModal">
+        <button
+          type="button"
+          class="image-modal-close"
+          onclick="closeImageModal()"
+        >
+          ×
+        </button>
+
+        <div class="image-modal-content">
+          <img id="modalImage" src="" alt="상세페이지 전체 이미지" />
+        </div>
+      </div>
     </div>
   </body>
 </html>

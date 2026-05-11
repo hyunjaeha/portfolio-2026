@@ -160,3 +160,31 @@ designTabButtons.forEach((button) => {
     }
   });
 });
+
+function openImageModal(imageSrc) {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  modalImage.src = imageSrc;
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  modal.classList.remove("active");
+  modalImage.src = "";
+  document.body.style.overflow = "";
+}
+
+const imageModal = document.getElementById("imageModal");
+
+if (imageModal) {
+  imageModal.addEventListener("click", (e) => {
+    if (e.target === imageModal) {
+      closeImageModal();
+    }
+  });
+}

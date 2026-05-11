@@ -118,22 +118,41 @@
   }
 
   /* profile */
-
   .profile-grid {
-    grid-template-columns: 420px 1fr;
-    grid-template-areas:
-      "intro info"
-      "contact info";
-    column-gap: 80px;
-    row-gap: 120px;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-areas: "left info";
+    column-gap: 72px;
+    align-items: start;
+  }
+
+  .profile-left {
+    grid-area: left;
+    position: static;
+    top: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
   }
 
   .profile-info {
+    grid-area: info;
     width: 100%;
-    max-width: none;
-    justify-self: end;
     padding-left: 0;
     min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .profile-intro {
+    position: static;
+  }
+
+  .profile-contact {
+    padding-bottom: 0;
   }
 
   .info-item strong {
@@ -153,13 +172,43 @@
   }
 
   /* Web */
+  /* Web */
   .web-grid {
     grid-template-columns: 1fr;
     gap: 120px;
   }
 
+  .web-card {
+    display: grid;
+    grid-template-columns: 220px 220px 1fr;
+    column-gap: 32px;
+    align-items: start;
+  }
+
   .web-card-top {
-    grid-template-columns: 220px 1fr;
+    display: contents;
+  }
+
+  .web-thumb {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .web-meta {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .web-overview {
+    grid-column: 3;
+    grid-row: 1;
+    margin-top: 0;
+    transform: translateX(-60px);
+    width: calc(100% + 60px);
+  }
+
+  .web-overview strong {
+    margin-bottom: 10px;
   }
 
   .web-info h3 {
@@ -172,7 +221,7 @@
 
   .web-role,
   .web-overview p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .tab-web {
@@ -315,15 +364,29 @@
   /* Profile */
   .profile-section {
     padding-top: var(--spacing-48);
+    padding-bottom: 80px;
   }
 
   .profile-grid {
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "intro"
-      "contact"
+      "left"
       "info";
     row-gap: 60px;
+  }
+
+  .profile-left {
+    grid-area: left;
+    position: static;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .profile-intro {
+    position: static;
   }
 
   .profile-contact {
@@ -332,15 +395,35 @@
   }
 
   .profile-info {
+    grid-area: info;
+    width: 100%;
     max-width: none;
     justify-self: stretch;
     padding-left: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
   }
 
-    .profile-intro {
-    position: static;
+  .profile-info .heading-2 {
+    font-size: 30px;
   }
-  
+
+  .profile-intro h3 {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+
+  .profile-intro p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .profile-contact p {
+    font-size: 14px;
+  }
+
   /* App */
   .app-section {
     padding: 56px 0 80px;
@@ -361,8 +444,15 @@
     display: contents;
   }
 
-  .app-meta {
+  .app-mockup {
     order: 1;
+    width: 100%;
+    max-width: 230px;
+    margin: 0 auto;
+  }
+
+  .app-meta {
+    order: 2;
     width: 100%;
 
     display: grid;
@@ -370,11 +460,10 @@
     grid-template-areas:
       "info buttons"
       "tool buttons";
-    column-gap: 24px;
-    row-gap: 20px;
+    column-gap: 20px;
+    row-gap: 24px;
     align-items: start;
   }
-
   .app-info {
     grid-area: info;
     margin-bottom: 0;
@@ -387,44 +476,34 @@
 
   .app-buttons {
     grid-area: buttons;
-    align-self: center;
-
     margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+
+    align-self: end;
   }
 
-  .app-mockup {
-    order: 2;
-    width: 100%;
-    max-width: 230px;
-    margin: 4px auto 0;
+  .app-buttons a {
+    width: 110px;
   }
 
   .app-overview {
     order: 3;
     width: 100%;
+    max-width: none;
     margin-top: 0;
   }
 
-  .app-meta h3,
-  .app-info h3 {
-    font-size: 34px;
-  }
-
-  .app-label {
-    font-size: 14px;
-  }
-
-  .app-type {
-    font-size: 14px;
-  }
-
-  .app-overview strong {
-    font-size: 15px;
-  }
-
   .app-overview p {
+    width: 100%;
+    max-width: none;
     font-size: 16px;
     line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* Web */
@@ -442,24 +521,28 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 72px;
+    gap: 80px;
   }
 
   .web-card {
     width: 100%;
     min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
   }
 
   .web-card-top {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    display: contents;
   }
 
   .web-thumb {
+    order: 1;
     width: 100%;
-    max-width: 260px;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .web-thumb img {
@@ -469,12 +552,28 @@
   }
 
   .web-meta {
+    order: 2;
     width: 100%;
     min-width: 0;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info buttons"
+      "tool buttons";
+    column-gap: 20px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  .web-info {
+    grid-area: info;
+    margin-bottom: 0;
   }
 
   .web-info h3 {
     font-size: 28px;
+    margin-bottom: 4px;
   }
 
   .web-type {
@@ -484,24 +583,63 @@
 
   .web-role {
     font-size: 15px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
   }
 
   .web-tool {
-    margin-bottom: 28px;
+    grid-area: tool;
+    margin-bottom: 0;
+  }
+
+  .web-tool p {
+    margin-bottom: 8px;
+  }
+
+  .web-tool-icons {
+    display: flex;
+    gap: 6px;
+  }
+
+  .web-tool-icons img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .web-buttons {
+    grid-area: buttons;
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+
+    align-self: end;
+  }
+
+  .web-buttons a {
+    width: 110px;
+    height: 34px;
   }
 
   .web-overview {
+    order: 3;
     width: 100%;
     max-width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
+    transform: none;
   }
 
   .web-overview strong {
+    display: block;
     font-size: 18px;
+    margin-bottom: 10px;
   }
 
   .web-overview p {
+    width: 100%;
+    max-width: none;
     font-size: 15px;
     line-height: 1.7;
     word-break: keep-all;
@@ -544,7 +682,7 @@
 
   .design-wrap {
     grid-template-columns: 1fr;
-    row-gap: 32px;
+    row-gap: 52px;
   }
 
   .design-menu {
@@ -556,11 +694,15 @@
   }
 
   .design-grid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     gap: 16px;
+    flex-wrap: wrap;
   }
 
   .design-card {
-    width: 140px;
+    width: 150px;
   }
 
   .design-subcopy {
@@ -568,20 +710,62 @@
     line-height: 1.6;
   }
 
+  .design-content {
+    width: 100%;
+  }
+
+  .design-grid {
+    width: fit-content;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 155px);
+    gap: 16px;
+  }
+
+  .design-card {
+    width: 155px;
+  }
+
+  #card-news .design-grid {
+    width: fit-content;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 155px);
+    gap: 16px;
+  }
+
+  #card-news .design-card {
+    width: 155px;
+  }
+
   /* Contact */
   .contact-section {
-    padding: 72px 0 90px;
+    padding: 72px 0 80px;
   }
 
   .contact-inner {
-    min-height: 500px;
+    min-height: auto;
   }
 
   .contact-top {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    column-gap: 24px;
   }
 
+  .contact-small {
+    grid-column: 1;
+  }
+
+  .contact-work {
+    grid-column: 2;
+    margin-top: 32px;
+    text-align: right;
+    justify-self: end;
+  }
   .contact-title {
     font-size: 42px;
   }
@@ -593,12 +777,29 @@
 
   .contact-bottom {
     margin-top: 72px;
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info year"
+      "home home";
+    column-gap: 24px;
     row-gap: 32px;
+    align-items: end;
+  }
+
+  .contact-info {
+    grid-area: info;
+  }
+
+  .contact-year {
+    grid-area: year;
+    text-align: right;
   }
 
   .home-btn {
+    grid-area: home;
     justify-self: start;
+    margin-top: 32px;
   }
 
   .section-file-tab img {

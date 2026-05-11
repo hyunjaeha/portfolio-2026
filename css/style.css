@@ -272,7 +272,7 @@
 }
 
 .profile-contact {
-   grid-area: auto;
+  grid-area: auto;
   align-self: start;
   padding-bottom: 8px;
 }
@@ -930,6 +930,61 @@
 
 .no-radius-card img {
   border-radius: 0;
+}
+
+.detail-popup-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.detail-popup-btn img {
+  display: block;
+  width: 100%;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 24px;
+  background: rgba(0, 0, 0, 0.85);
+  overflow-y: auto;
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+.image-modal-content {
+  width: min(100%, 900px);
+}
+
+.image-modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.image-modal-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 10000;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 48px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 /* ================================= contact ================================= */
