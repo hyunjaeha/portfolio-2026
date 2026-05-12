@@ -8,26 +8,25 @@ window.addEventListener("load", () => {
 });
 
 // mobile menu
+const mbMenuWrap = document.querySelector(".mb-menu-wrap");
 const mbMenuBtn = document.querySelector(".mb-menu-btn");
 const mbCloseBtn = document.querySelector(".mb-close-btn");
-const mbMenulist = document.querySelector(".mb-menu-list");
+const mbMenuLinks = document.querySelectorAll(".mb-menu-list a");
 
 mbMenuBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("모바일 메뉴 버튼 클릭");
-
-  mbMenuBtn.style.display = "none";
-  mbCloseBtn.style.display = "block";
-  mbMenulist.style.display = "flex";
+  mbMenuWrap.classList.add("active");
 });
 
 mbCloseBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("모바일 메뉴 달기 버튼 클릭");
+  mbMenuWrap.classList.remove("active");
+});
 
-  mbMenuBtn.style.display = "block";
-  mbCloseBtn.style.display = "none";
-  mbMenulist.style.display = "none";
+mbMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mbMenuWrap.classList.remove("active");
+  });
 });
 
 // custom cursor
@@ -141,22 +140,90 @@ if (jjupScreens.length === 2) {
   }, 3000);
 }
 
-// design tab
+// web thumbnail card
+const webThumbs = document.querySelectorAll(".web-thumb");
+
+const webThumbObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  },
+);
+
+webThumbs.forEach((thumb) => {
+  webThumbObserver.observe(thumb);
+});
+
+// design tab + fade-up interaction
 const designTabButtons = document.querySelectorAll(".design-tab-btn");
 const designPanels = document.querySelectorAll(".design-panel");
+const designCards = document.querySelectorAll(".design-card");
+
+function showDesignCards(panel) {
+  const cards = panel.querySelectorAll(".design-card");
+
+  cards.forEach((card) => {
+    card.classList.remove("is-visible");
+  });
+
+  setTimeout(() => {
+    cards.forEach((card) => {
+      card.classList.add("is-visible");
+    });
+  }, 120);
+}
+
+const designCardObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  {
+    threshold: 0.25,
+  },
+);
+
+designCards.forEach((card) => {
+  designCardObserver.observe(card);
+});
+
+designPanels.forEach((panel) => {
+  if (panel.classList.contains("active")) {
+    showDesignCards(panel);
+  }
+});
 
 designTabButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const target = button.dataset.target;
 
     designTabButtons.forEach((btn) => btn.classList.remove("active"));
-    designPanels.forEach((panel) => panel.classList.remove("active"));
+
+    designPanels.forEach((panel) => {
+      panel.classList.remove("active");
+
+      const cards = panel.querySelectorAll(".design-card");
+      cards.forEach((card) => {
+        card.classList.remove("is-visible");
+      });
+    });
 
     button.classList.add("active");
 
     const targetPanel = document.getElementById(target);
+
     if (targetPanel) {
       targetPanel.classList.add("active");
+      showDesignCards(targetPanel);
     }
   });
 });

@@ -820,4 +820,10 @@
   .custom-cursor {
     display: none;
   }
+
+  .logo a,
+  .menu-list a,
+  .mb-menu-list a {
+    cursor: pointer;
+  }
 }
