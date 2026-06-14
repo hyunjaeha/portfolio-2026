@@ -53,6 +53,48 @@ if (customCursor) {
   });
 }
 
+// typing effect
+const words = ["WEB", "UX/UI", "CONTENTS"];
+
+const typingWord = document.getElementById("typing-word");
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (!isDeleting) {
+    typingWord.textContent =
+      currentWord.substring(0, charIndex + 1);
+
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 3000);
+      return;
+    }
+  } else {
+    typingWord.textContent =
+      currentWord.substring(0, charIndex - 1);
+
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 80 : 120);
+}
+
+if (typingWord) {
+  typeEffect();
+}
+
 // scroll reveal title
 const revealTitles = document.querySelectorAll(".reveal-title");
 
