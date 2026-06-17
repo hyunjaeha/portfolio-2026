@@ -73,7 +73,7 @@ function typeEffect() {
 
     if (charIndex === currentWord.length) {
       isDeleting = true;
-      setTimeout(typeEffect, 3000);
+      setTimeout(typeEffect, 2500);
       return;
     }
   } else {
